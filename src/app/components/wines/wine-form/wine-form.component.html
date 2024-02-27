@@ -1,0 +1,32 @@
+<form [formGroup]="wineForm" (ngSubmit)="onSubmit()" class="grid grid-rows-1 px-2">
+	<div class="grid grid-cols-6 items-center">
+		<label for="name" class="text-lg">Name</label>
+		<input class="col-span-5 border-2 p-2 rounded-md" type="text" id="name" placeholder="Name"
+			formControlName="name" required autocomplete="off">
+	</div>
+
+	<div class="grid grid-cols-6 items-center ">
+		<label for="year" class="text-lg">Year</label>
+		<input class="col-span-5 border-2 p-2 rounded-md" type="number" id="year" placeholder="Year"
+			formControlName="year" required autocomplete="off">
+	</div>
+
+	<div class="grid grid-cols-6 items-center">
+		<label for="country" class="text-lg">Country</label>
+		<input class="col-span-5 border-2 p-2 rounded-md" type="text" id="country" name="country" placeholder="Country"
+			formControlName="country" required autocomplete="off">
+	</div>
+
+	<div class="grid grid-cols-6">
+		<label for="description" class="text-lg">Description</label>
+		<textarea class="col-span-5 border-2 p-2 rounded-md" rows="4" id="description" name="description"
+			placeholder="Description" formControlName="description" required autocomplete="off"></textarea>
+	</div>
+
+	<div class="flex justify-end">
+		<button [disabled]="!wineForm.valid"
+			[ngStyle]="{'background-color':  !wineForm.valid ? '#5593f7' : '#156bf4' }"
+			class=" text-white px-5 py-2 rounded-md" type="submit">{{editingMode == true ? 'Edit' :
+			'Submit'}}</button>
+	</div>
+</form>

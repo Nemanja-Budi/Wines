@@ -1,0 +1,7 @@
+<div class="grid grid-cols-6 p-2 gap-2">
+    <div class="col-span-4">
+        <p class="flex gap-2"><strong>{{wine.id}}.</strong>{{wine.name}}</p>
+    </div>
+    <button routerLink="/wines/{{wine.id}}" class="px-5 py-2 bg-blue-600">Edit</button>
+    <button (click)="onEmitWineID(wine.id)" class="px-5 py-2 bg-red-600">X</button>
+</div>

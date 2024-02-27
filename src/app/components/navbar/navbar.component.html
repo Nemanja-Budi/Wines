@@ -1,0 +1,27 @@
+<nav>
+    <ul class="flex gap-4 p-3 justify-center items-center text-2xl font-bold bg-teal-800">
+        <li routerLinkActive="text-white"><a routerLink="/wines">Wines</a></li>
+        <li routerLinkActive="text-white"><a routerLink="/add-wines">Add wines</a></li>
+    </ul>
+    <!-- <div *ngFor="let vino of wineSignal()">
+        {{vino.name}}
+        {{vino.year}}
+    </div> -->
+
+    <!-- <div *ngFor="let vino of wineArr">
+        {{vino.name}}
+        {{vino.year}}
+    </div> -->
+    <!-- <div *ngFor="let vino of wine | async">
+        {{vino.name}}
+        {{vino.year}}
+    </div> -->
+
+    <div *ngFor="let vine of wines">
+        {{vine.name}}
+        {{vine.year}}
+    </div>
+
+    <button class="bg-blue-500 px-5 py-2 rounded-lg" (click)="sortAsc()">ASC</button>
+    <button class="bg-red-500 px-5 py-2 rounded-lg" (click)="sortDesc()">Desc</button>
+</nav>
